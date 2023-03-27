@@ -7,10 +7,14 @@ const App = () => {
 
   const [allGoals, setAllGoals] = useState([]);
 
+  const handleAddGoal=(newGoal)=>{
+    setAllGoals((prevGoals)=>[...prevGoals,newGoal]);
+  }
+
   return (
     <div id="main">
-      <GoalForm />
-      <ListOfGoals />
+      <GoalForm onAddGoal={handleAddGoal}/>
+      <ListOfGoals goals={allGoals} />
     </div>
   )
   

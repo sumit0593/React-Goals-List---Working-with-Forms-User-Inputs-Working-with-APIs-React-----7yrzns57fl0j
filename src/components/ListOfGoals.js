@@ -1,11 +1,13 @@
 import React from "react";
 
-const ListOfGoals = () => {
+const ListOfGoals = (props) => {
     return (
       <ul>
-        <li>
-            <p>My goal is to goalName, by goalDeadline.</p>
+        {props.goals.map((goal)=>(
+          <li key={goal.name}>
+            <p>My goal is to {goal.name}, by {goal.deadline}.</p>
           </li>
+        ))}
       </ul>
     );
 }
